@@ -112,6 +112,21 @@ public class Main {
         System.out.println("Estudiante registrado correctamente.");
     }
     
+    public static void listarEstudiantes() {
+
+        System.out.println("\n--- LISTA DE ESTUDIANTES ---");
+
+        if (listaEstudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados.");
+            return;
+        }
+
+        for (Estudiante e : listaEstudiantes) {
+            System.out.println("----------------------------");
+            System.out.println(e);
+        }
+    }
+    
     public static void menuAsignaturas() {
         
     }
