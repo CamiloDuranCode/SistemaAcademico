@@ -77,6 +77,41 @@ public class Main {
         } while (opcion != 5);
     }
     
+    public static void registrarEstudiante() {
+
+        sc.nextLine(); // limpiar buffer
+
+        System.out.println("\n--- REGISTRAR ESTUDIANTE ---");
+
+        System.out.print("Código: ");
+        String codigo = sc.nextLine();
+
+        // Verificar si ya existe
+        for (Estudiante e : listaEstudiantes) {
+            if (e.getCodigo().equalsIgnoreCase(codigo)) {
+                System.out.println("Ya existe un estudiante con ese código.");
+                return;
+            }
+        }
+
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+
+        System.out.print("Apellido: ");
+        String apellido = sc.nextLine();
+
+        System.out.print("Edad: ");
+        int edad = sc.nextInt();
+
+        System.out.print("Semestre: ");
+        int semestre = sc.nextInt();
+
+        Estudiante nuevo = new Estudiante(codigo, nombre, apellido, edad, semestre);
+        listaEstudiantes.add(nuevo);
+
+        System.out.println("Estudiante registrado correctamente.");
+    }
+    
     public static void menuAsignaturas() {
         
     }
