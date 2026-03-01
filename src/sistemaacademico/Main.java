@@ -19,6 +19,8 @@ public class Main {
     
    public static void registrarNota() {
         Scanner sc = new Scanner(System.in);
+        
+        System.out.println("\n    REGISTRO DE NOTAS    ");
 
         System.out.print("Código del estudiante: ");
         String codEst = sc.nextLine();
@@ -49,6 +51,42 @@ public class Main {
         notas.add(nota);
 
         System.out.println("Nota registrada correctamente");
-}
+    }
+   
+   public static void listarNotas() {
+       
+       System.out.println("\n    LISTA DE NOTAS    ");
+       
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas registradas");
+            return;
+        }
+
+        for (Nota n : notas) {
+            System.out.println("-------------------------");
+            System.out.println(n);
+        }
+    }
+   
+   public static void buscarNota() {
+       
+        System.out.println("\n    BUSCAR NOTA    ");
+       
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Código del estudiante: ");
+        String codEst = sc.nextLine();
+
+        for (Nota n : notas) {
+            if (n.getEstudiante().getCodigo().equals(codEst)) {
+                System.out.println(n);
+                return;
+            }
+        }
+
+        System.out.println("Nota no encontrada");
+    }
+   
+   
    
 }
