@@ -117,5 +117,25 @@ public class Main {
         System.out.println("Nota no encontrada");
     }
    
+   public static void eliminarNota() {
+       
+        System.out.println("\n    ELIMINAR NOTA    ");
+   
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Código del estudiante: ");
+        String codEst = sc.nextLine();
+
+        for (int i = 0; i < notas.size(); i++) {
+            if (notas.get(i).getEstudiante().getCodigo().equals(codEst)) {
+                notas.remove(i);
+                System.out.println("Nota eliminada");
+                return;
+            }
+        }
+
+        System.out.println("Nota no encontrada");
+    }
+   
  
 }
