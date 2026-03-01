@@ -102,7 +102,7 @@ static Scanner sc = new Scanner(System.in);
     
     public static void actualizarAsignatura() {
 
-    System.out.println("\    ACTUALIZAR ASIGNATURA    ");
+    System.out.println("\n    ACTUALIZAR ASIGNATURA    ");
 
     if (asignaturas.isEmpty()) {
         System.out.println("No hay asignaturas registradas.");
@@ -134,6 +134,38 @@ static Scanner sc = new Scanner(System.in);
             a.setDocente(nuevoDocente);
 
             System.out.println("Asignatura actualizada correctamente.");
+            return;
+        }
+    }
+
+    System.out.println("No se encontró una asignatura con ese codigo.");
+}
+    
+    
+    
+    
+    public static void eliminarAsignatura() {
+
+    System.out.println("\n    ELIMINAR ASIGNATURA    ");
+
+    if (asignaturas.isEmpty()) {
+        System.out.println("No hay asignaturas registradas.");
+        return;
+    }
+
+    System.out.print("Ingrese el codigo de la asignatura a eliminar: ");
+    String codigoBuscado = sc.nextLine();
+
+    for (int i = 0; i < asignaturas.size(); i++) {
+
+        if (asignaturas.get(i).getCodigo().equalsIgnoreCase(codigoBuscado)) {
+
+            System.out.println("Asignatura encontrada:");
+            System.out.println(asignaturas.get(i));
+
+            asignaturas.remove(i);
+
+            System.out.println("Asignatura eliminada correctamente.");
             return;
         }
     }
