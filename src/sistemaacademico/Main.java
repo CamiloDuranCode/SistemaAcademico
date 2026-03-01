@@ -127,6 +127,44 @@ public class Main {
         }
     }
     
+    public static void actualizarEstudiante() {
+
+        sc.nextLine(); // limpiar buffer
+
+        System.out.println("\n--- ACTUALIZAR ESTUDIANTE ---");
+        System.out.print("Ingrese el código del estudiante: ");
+        String codigo = sc.nextLine();
+
+        for (Estudiante e : listaEstudiantes) {
+
+            if (e.getCodigo().equalsIgnoreCase(codigo)) {
+
+                System.out.println("Estudiante encontrado. Ingrese los nuevos datos:");
+
+                System.out.print("Nuevo nombre: ");
+                String nuevoNombre = sc.nextLine();
+                e.setNombre(nuevoNombre);
+
+                System.out.print("Nuevo apellido: ");
+                String nuevoApellido = sc.nextLine();
+                e.setApellido(nuevoApellido);
+
+                System.out.print("Nueva edad: ");
+                int nuevaEdad = sc.nextInt();
+                e.setEdad(nuevaEdad);
+
+                System.out.print("Nuevo semestre: ");
+                int nuevoSemestre = sc.nextInt();
+                e.setSemestre(nuevoSemestre);
+
+                System.out.println("Estudiante actualizado correctamente.");
+                return;
+            }
+        }
+
+        System.out.println("No se encontró un estudiante con ese código.");
+    }
+    
     public static void menuAsignaturas() {
         
     }
