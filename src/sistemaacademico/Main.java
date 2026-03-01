@@ -53,4 +53,51 @@ static Scanner sc = new Scanner(System.in);
     System.out.println("Asignatura registrada correctamente.");
 }
     
+    
+    
+    
+    
+    public static void listarAsignaturas() {
+
+    System.out.println("\n    LISTA DE ASIGNATURAS    ");
+
+    if (asignaturas.isEmpty()) {
+        System.out.println("No hay asignaturas registradas.");
+        return;
+    }
+
+    for (Asignatura a : asignaturas) {
+        System.out.println("-------------------------");
+        System.out.println(a);
+    }
+}
+    
+    
+    
+    
+    public static void buscarAsignatura() {
+
+    System.out.println("\n    BUSCAR ASIGNATURA    ");
+
+    if (asignaturas.isEmpty()) {
+        System.out.println("No hay asignaturas registradas.");
+        return;
+    }
+
+    System.out.print("Ingrese el codigo de la asignatura: ");
+    String codigoBuscado = sc.nextLine();
+
+    for (Asignatura a : asignaturas) {
+        if (a.getCodigo().equalsIgnoreCase(codigoBuscado)) {
+            System.out.println("\nAsignatura encontrada:");
+            System.out.println(a);
+            return;
+        }
+    }
+
+    System.out.println("No se encontró una asignatura con ese codigo.");
+}
+    
+    
+    
 }
