@@ -22,6 +22,47 @@ public class Main {
     }
 
     public static void mostrarMenu() {
-        System.out.println("=== SISTEMA ACADÉMICO ===");
+        int opcion;
+
+        do {
+            System.out.println("\n===== SISTEMA ACADÉMICO =====");
+            System.out.println("1. Gestión de Estudiantes");
+            System.out.println("2. Gestión de Asignaturas");
+            System.out.println("3. Gestión de Notas");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    menuEstudiantes();
+                    break;
+                case 2:
+                    menuAsignaturas();
+                    break;
+                case 3:
+                    menuNotas();
+                    break;
+                case 4:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        }
+        while (opcion != 4);
+    }
+    
+    public static void menuEstudiantes() {
+        
+    }
+    
+    public static void menuAsignaturas() {
+        
+    }
+    
+    public static void menuNotas() {
+        
     }
 }
