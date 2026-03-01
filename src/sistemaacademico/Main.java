@@ -165,6 +165,27 @@ public class Main {
         System.out.println("No se encontró un estudiante con ese código.");
     }
     
+    public static void eliminarEstudiante() {
+
+        sc.nextLine(); // limpiar buffer
+
+        System.out.println("\n--- ELIMINAR ESTUDIANTE ---");
+        System.out.print("Ingrese el código del estudiante: ");
+        String codigo = sc.nextLine();
+
+        for (int i = 0; i < listaEstudiantes.size(); i++) {
+
+            if (listaEstudiantes.get(i).getCodigo().equalsIgnoreCase(codigo)) {
+
+                listaEstudiantes.remove(i);
+                System.out.println("Estudiante eliminado correctamente.");
+                return;
+            }
+        }
+
+        System.out.println("No se encontró un estudiante con ese código.");
+    }
+    
     public static void menuAsignaturas() {
         
     }
