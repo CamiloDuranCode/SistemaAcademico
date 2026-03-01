@@ -100,4 +100,46 @@ static Scanner sc = new Scanner(System.in);
     
     
     
+    public static void actualizarAsignatura() {
+
+    System.out.println("\    ACTUALIZAR ASIGNATURA    ");
+
+    if (asignaturas.isEmpty()) {
+        System.out.println("No hay asignaturas registradas.");
+        return;
+    }
+
+    System.out.print("Ingrese el codigo de la asignatura a actualizar: ");
+    String codigoBuscado = sc.nextLine();
+
+    for (Asignatura a : asignaturas) {
+
+        if (a.getCodigo().equalsIgnoreCase(codigoBuscado)) {
+
+            System.out.println("Asignatura encontrada:");
+            System.out.println(a);
+
+            System.out.print("Nuevo nombre: ");
+            String nuevoNombre = sc.nextLine();
+
+            System.out.print("Nuevos creditos: ");
+            int nuevosCreditos = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Nuevo docente: ");
+            String nuevoDocente = sc.nextLine();
+
+            a.setNombre(nuevoNombre);
+            a.setCreditos(nuevosCreditos);
+            a.setDocente(nuevoDocente);
+
+            System.out.println("Asignatura actualizada correctamente.");
+            return;
+        }
+    }
+
+    System.out.println("No se encontró una asignatura con ese codigo.");
+}
+    
+        
 }
