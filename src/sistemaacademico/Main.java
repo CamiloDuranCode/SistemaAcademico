@@ -87,6 +87,35 @@ public class Main {
         System.out.println("Nota no encontrada");
     }
    
+   public static void actualizarNota() {
+       
+        System.out.println("\n    ACTUALIZAR NOTA    ");
+       
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Código del estudiante: ");
+        String codEst = sc.nextLine();
+
+        for (Nota n : notas) {
+            if (n.getEstudiante().getCodigo().equals(codEst)) {
+
+                System.out.print("Nuevo valor de la nota: ");
+                double nuevoValor = sc.nextDouble();
+                sc.nextLine();
+
+                System.out.print("Nuevo periodo: ");
+                String nuevoPeriodo = sc.nextLine();
+
+                n.setValor(nuevoValor);
+                n.setPeriodo(nuevoPeriodo);
+
+                System.out.println("Nota actualizada");
+                return;
+            }
+        }
+
+        System.out.println("Nota no encontrada");
+    }
    
-   
+ 
 }
