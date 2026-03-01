@@ -71,7 +71,7 @@ public class Main {
             switch (opcion) {
                 case 1: registrarEstudiante(); break;
                 case 2: listarEstudiantes(); break;
-                case 3: buscarEstudiantes(); break;
+                case 3: buscarEstudiante(); break;
                 case 4: actualizarEstudiante(); break;
                 case 5: eliminarEstudiante(); break;
             }
